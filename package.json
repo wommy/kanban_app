@@ -1,16 +1,21 @@
 {
   "name": "kanban_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "walking thru surviveJS's webpack react",
   "main": "index.js",
+  "repository" : {
+    "type" : "git"
+  , "url" : "https://github.com/wommy/kanban_app.git"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "author": "wommy",
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^1.6.1",
     "node-libs-browser": "^0.5.2",
-    "webpack": "^1.12.1"
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.10.1"
   }
 }
