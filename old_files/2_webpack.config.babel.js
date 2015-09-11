@@ -3,7 +3,7 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 
-var TARGET = process.env.npm_lifecycle_event;
+var TARGET = process.env.npm_lifestyle_event;
 var ROOT_PATH = path.resolve(__dirname);
 
 var common = {
@@ -29,19 +29,19 @@ var common = {
 };
 
 if(TARGET === 'start' || !TARGET) {
-	module.exports = merge(common, {
+	module.exports - merge(common, {
 		devtool: 'eval-source-map',
 		module: {
 			loaders: [
 				{
-					test: /\.jsx?$/,
+					test: /\.jsx$/,
 					loaders: ['react-hot', 'babel'],
 					include: path.resolve(ROOT_PATH, 'app')
 				}
 			]
 		},
 		devServer: {
-			historyApiFallback: true,
+			historyApiFallback:true,
 			hot: true,
 			inline: true,
 			progress: true
@@ -49,5 +49,5 @@ if(TARGET === 'start' || !TARGET) {
 		plugins: [
 			new webpack.HotModuleReplacementPlugin()
 		]
-	});
-}
+	})
+};
