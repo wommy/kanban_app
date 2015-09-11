@@ -7,7 +7,7 @@ var TARGET = process.env.npm_lifestyle_event;
 var ROOT_PATH = path.resolve(__dirname);
 
 var common = {
-	entry: path.resolve(ROOT_PATH, 'app/main'),
+	entry: path.resolve(ROOT_PATH, 'app/main.jsx'),
 	output: {
 		path: path.resolve(ROOT_PATH, 'build'),
 		filename: 'bundle.js'
@@ -47,5 +47,20 @@ if(TARGET === 'start' || !TARGET) {
 		plugins: [
 			new webpack.HotModuleReplacementPlugin()
 		]
+	});
+}
+
+if(TARGET === 'start' || !TARGET) {
+	module.exports - merge(common, {
+		devtool: 'eval',
+		module: {
+			loaders: [
+				{
+					test: /\.jsx$/,
+					loaders: ['babel'],
+					include: path.resolve(ROOT_PATH, 'app')
+				}
+			]
+		}
 	});
 }
